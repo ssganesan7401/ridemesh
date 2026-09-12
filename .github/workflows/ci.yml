@@ -1,0 +1,23 @@
+name: RideMesh CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+  push:
+    branches:
+      - main
+
+jobs:
+  repository-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show repository structure
+        run: |
+          echo "RideMesh repository checked out successfully"
+          find . -maxdepth 3 -type f
